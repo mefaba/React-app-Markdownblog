@@ -1,18 +1,18 @@
 import React from 'react';
 import './App.css';
-import BlogPosts from './components/blog-posts.unit';
+import BlogPosts from './components/post-preview/post-previews.unit';
 
-import {Switch,Route,Link} from "react-router-dom";
+import {Switch,Route} from "react-router-dom";
+import PostPage from './pages/post_page';
 
 function App() {
   /* console.log(Posts) */
   return (
-    <div className="App">
-      <header className="App-header">
-        <Route path="/" component={BlogPosts} />
-      
-      </header>
-      
+    <div className="App App-header">
+      <Switch>
+        <Route exact path="/" component={BlogPosts} />
+        <Route path="/blog/:id" component={PostPage} />
+      </Switch> 
     </div>
   );
 }

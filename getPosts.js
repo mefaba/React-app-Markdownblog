@@ -9,12 +9,14 @@ let postList = []
 const stream = reader(dirPath)
 
 stream.on('data', function (maindata) {
+    let timestamp = Date.now() * Math.random()
     maindata.data["content"] = maindata.markdown
+    maindata.data["id"] = Math.round(timestamp)
     postList.push(maindata.data)
   })
   
 stream.on('end', function () {
     /* console.log(postList) */
     let postListJson = JSON.stringify(postList)
-    fs.writeFileSync("src/posts.json", postListJson)
+    fs.writeFileSync("src/blog-posts.json", postListJson)
 })
