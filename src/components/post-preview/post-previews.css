@@ -1,3 +1,7 @@
 .preview-title:hover {
     cursor: pointer;
 }
+
+.preview-container{
+    width: 40%;
+}

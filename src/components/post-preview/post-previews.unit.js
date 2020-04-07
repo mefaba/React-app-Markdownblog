@@ -5,7 +5,7 @@ import "./post-previews.css"
 
 const BlogPosts = ({ history }) => {
   return (
-    <div>
+    <div className="preview-container">
       {
         Posts.map((postData, i) => {
           return (
