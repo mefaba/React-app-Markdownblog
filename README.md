@@ -8,9 +8,12 @@ React App Markdown Blog.
 
 Components imports blog posts from "/blog-posts.json".
 
-This blog using Netflify Content Management System. Therefore users with invitation are able to post articles
+This blog using Netflify Content Management System. Therefore Users can login via google or github, or create an account. Logged in users 
 
-via user interface without dealing with code.
+can post articles via user interface without dealing with code or github. It is currently open no anyone, not restricted with mail 
+
+invitation
+
 
 ### Coding Features
 
@@ -19,6 +22,8 @@ via user interface without dealing with code.
 ☑️ Markdown Blog
 
 ☑️ React App
+
+☑️ React Router
 
 ### Improve*
 
