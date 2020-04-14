@@ -7,10 +7,10 @@ const NavbarUnit = () => {
 
     return (
         <div>
-            <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Navbar bg="warning" variant="light">
                 <Nav className="mr-auto">
-                     <Link to="/">Home</Link>
+                    <Nav.Link as={Link} to="/">Home</Nav.Link>
+                    <Nav.Link as={Link} to="/admin">Sign In</Nav.Link>
                 </Nav>
             </Navbar>
         </div>

@@ -6,20 +6,24 @@ import PostPage from './pages/post_page';
 import NavbarUnit from './components/navbar/navbar.unit';
 
 import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 
 function App() {
   /* console.log(Posts) */
   return (
     <div className="App">
-      <NavbarUnit />
-      <Container className="d-flex justify-content-center align-items-center text-center">
-        <Switch>
-          <Route exact path="/" component={BlogPosts} />
-          <Route path="/blog/:id" component={PostPage} />
-        </Switch> 
+      <Container>
+        <NavbarUnit />
+        <Row className="d-flex justify-content-center">
+          <Switch>
+            <Route exact path="/" component={BlogPosts} />
+            <Route path="/blog/:id" component={PostPage} />
+          </Switch> 
+        </Row>
       </Container>
     </div>
   );
 }
 
 export default App;
+/* className="d-flex justify-content-center align-items-center text-center" */

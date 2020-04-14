@@ -10,3 +10,9 @@
 }
 
 
+.custom-nav-element{
+  color: aliceblue !important;
+}
+.custom-nav-element:hover{
+  color: rgb(141, 146, 150) !important;
+}
