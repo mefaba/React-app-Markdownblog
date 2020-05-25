@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import BlogPosts from './components/post-preview/post-previews.unit';
-import {Switch,Route} from "react-router-dom";
+import {Switch,Route, Redirect} from "react-router-dom";
 import PostPage from './pages/post_page';
 import NavbarUnit from './components/navbar/navbar.unit';
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-
-function App() {
+const App = ()  => {
   /* console.log(Posts) */
+  useEffect(()=>{
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  })
+
   return (
     <div className="App">
       <Container>
@@ -18,6 +29,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={BlogPosts} />
             <Route path="/blog/:id" component={PostPage} />
+            <Route path="/admin"><Redirect to="/admin"/></Route>
           </Switch> 
         </Row>
       </Container>
